@@ -5,11 +5,6 @@
 > 给 DeepSeek Harness Web 界面的一层「粉色护眼材质」：暖玫瑰纸色、低饱和、圆角石子感、纸纹与柔光。
 > 朴素、不喧哗；深浅两套色随 DSH 的外观设置自动切换。
 
-![侧栏材质（实机局部）](preview/sidebar.png)
-
-> 公开版只保留不含会话内容的局部截图；完整窗口截图仅本地保留在 `preview/raw/`（已 gitignore）。
-
-
 ```jsonc
 // ~/.dsh/profiles/desktop/package.json
 "dependencies": {
@@ -31,10 +26,6 @@ node "...\qa\manage.mjs" uninstall                                              
 等价的 `.ps1` 包装：`qa/install.ps1`、`qa/uninstall.ps1`。
 `install` 会依次：构建 bundle → 写 link 依赖 → 创建 node_modules 链接 → 选中 bundle → 触发一次 HMR 重算。
 
-
-
-
-
 | 角色 | 浅色「暖樱纸」 | 深色「暮樱」 |
 | --- | --- | --- |
 | 画布 `bg-base` | `#fbf6f3` | `#241a1d` |
@@ -49,8 +40,6 @@ node "...\qa\manage.mjs" uninstall                                              
 | 选区 | `#c97e9673`（45%） | `#d896a666`（40%） |
 
 完整令牌清单见 [`research/tokens.md`](research/tokens.md)。
-
-
 
 ## 使用与二次调整
 
@@ -117,10 +106,6 @@ dsh-theme-sakura-mist/
    ├─ tokens.md          # --dsw 设计令牌要点（升级后重写版）
    └─ pipeline.md        # 客户端插件热加载管线要点（升级后重写版）
 ```
-
----
-
-
 
 ---
 
