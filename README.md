@@ -13,9 +13,9 @@
 "dsh": { "profile": { "bundles": [ ... , "dsh-theme-sakura-mist" ] } }
 ```
 
-- 因此它出现在 **设置 → 插件**（Settings → Plugins）的 bundle 列表里，可以像其他插件一样开关；
+出现在 **设置 → 插件**（Settings → Plugins）的 bundle 列表里，可以像其他插件一样开关
 
-维护命令（幂等；Windows PowerShell 5.1 / 7 均可）：
+维护命令（幂等；Windows PowerShell 5.1 / 7 均可）
 
 ```powershell
 node "$env:USERPROFILE\.dsh\themes\dsh-theme-sakura-mist\qa\manage.mjs" status     # 查看登记状态
