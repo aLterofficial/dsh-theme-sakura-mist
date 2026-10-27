@@ -1,5 +1,7 @@
 # 樱雾 · Sakura Mist
 
+> GitHub: <https://github.com/aLterofficial/dsh-theme-sakura-mist>
+
 > 给 DeepSeek Harness Web 界面的一层「粉色护眼材质」：暖玫瑰纸色、低饱和、圆角石子感、纸纹与柔光。
 > 朴素、不喧哗；深浅两套色随 DSH 的外观设置自动切换。
 

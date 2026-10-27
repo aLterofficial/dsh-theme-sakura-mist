@@ -39,5 +39,10 @@
       "patch": "./cordis.patch.yml"
     }
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aLterofficial/dsh-theme-sakura-mist.git"
+  },
+  "homepage": "https://github.com/aLterofficial/dsh-theme-sakura-mist#readme"
 }
