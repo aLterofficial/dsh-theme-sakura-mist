@@ -124,7 +124,7 @@ dsh-theme-sakura-mist/
 
 ---
 
-## 6. 许可与声明
+## 许可与声明
 
 - 本仓库的**主题代码**（CSS 覆盖、插件胶水、构建与脚本）以 MIT 许可发布，见 [LICENSE](LICENSE)。
 - 这是一个**非官方第三方主题**，与 DeepSeek 官方无隶属或背书关系；DeepSeek Harness 是独立的开源项目，本仓库不分发其代码或资源。
@@ -132,7 +132,7 @@ dsh-theme-sakura-mist/
 - 界面截图中的 UI 组件版权归 DeepSeek；截图仅用于展示主题效果。
 - “DeepSeek”“Harness”等商标归其各自所有者。若准备在官方社区发布，请先确认项目的品牌与分发规范。
 
-## 7. 发布到 GitHub
+## 发布到 GitHub
 
 仓库已 `git init` 并暂存全部可公开文件（`preview/raw/` 中含会话内容的截图已被 `.gitignore` 排除）。发布步骤：
 
