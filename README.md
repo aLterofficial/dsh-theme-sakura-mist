@@ -15,12 +15,7 @@
 
 出现在 **设置 → 插件**（Settings → Plugins）的 bundle 列表里，可以像其他插件一样开关
 
-维护命令（幂等；Windows PowerShell 5.1 / 7 均可）
-
-```powershell
-node "$env:USERPROFILE\.dsh\themes\dsh-theme-sakura-mist\qa\manage.mjs" status     # 查看登记状态
-node "...\qa\manage.mjs" install                                                  # 安装 / 修复
-node "...\qa\manage.mjs" uninstall                                                # 从 profile 移除（保留源码）
+                                     
 ```
 
 等价的 `.ps1` 包装：`qa/install.ps1`、`qa/uninstall.ps1`。
@@ -41,13 +36,7 @@ node "...\qa\manage.mjs" uninstall                                              
 
 完整令牌清单见 [`research/tokens.md`](research/tokens.md)。
 
-## 使用与二次调整
 
-### 改配色 / 改质感
-
-```powershell
-cd "$env:USERPROFILE\.dsh\themes\dsh-theme-sakura-mist"
-node build.mjs      # 生成 lib/client.js
 ```
 
 约 1 秒内打开着的 DSH 页面会**热替换**主题（无需刷新、无需重启）。`build.mjs` 无第三方依赖。
@@ -77,35 +66,8 @@ node qa/check-katex.mjs                                    # 公式回退色校�
 node qa/manage.mjs uninstall
 ```
 
-从 `dsh.profile.bundles` 取消选择、移除 link 依赖与 node_modules 链接；**不会删除**
-`~/.dsh/themes` 下的源码。改动经 HMR 热应用，界面几秒内复原。
-
 ---
 
-## 文件结构
-
-```
-dsh-theme-sakura-mist/
-├─ package.json          # dsh.client 声明 + dsh.bundle.patch（正式 bundle 入口）
-├─ cordis.patch.yml      # bundle 自带的 insert 补丁（由 DSH 加载，无需写入 profile patch）
-├─ build.mjs             # 零依赖打包：theme.css + client-entry.js → lib/client.js
-├─ src/
-│  ├─ theme.css          # 材质本体（全部设计令牌、纸纹、区域分隔、选区、公式回退色）
-│  └─ client-entry.js    # 浏览器侧插件逻辑（注入样式、回执、回滚）
-├─ lib/
-│  ├─ index.js           # 宿主侧：beacon 路由 + 状态文件
-│  └─ client.js          # 构建产物（DSH 下发的自注册 bundle）
-├─ qa/
-│  ├─ manage.mjs         # bundle 安装/卸载/状态（依赖 link + bundles 列表 + HMR trigger）
-│  ├─ install.ps1        # manage.mjs install 的包装
-│  ├─ uninstall.ps1      # manage.mjs uninstall 的包装
-│  ├─ capture-desktop.ps1# 截取 DSH 窗口
-│  └─ check-katex.mjs    # 公式回退色校验（含 check-katex.html）
-├─ preview/              # 实机局部截图（完整截图放在 preview/raw/ 且不提交）
-└─ research/
-   ├─ tokens.md          # --dsw 设计令牌要点（升级后重写版）
-   └─ pipeline.md        # 客户端插件热加载管线要点（升级后重写版）
-```
 
 ---
 
@@ -117,19 +79,5 @@ dsh-theme-sakura-mist/
 - 界面截图中的 UI 组件版权归 DeepSeek；截图仅用于展示主题效果。
 - “DeepSeek”“Harness”等商标归其各自所有者。若准备在官方社区发布，请先确认项目的品牌与分发规范。
 
-## 发布到 GitHub
-
-仓库已 `git init` 并暂存全部可公开文件（`preview/raw/` 中含会话内容的截图已被 `.gitignore` 排除）。发布步骤：
-
-```powershell
-cd "$env:USERPROFILE\.dsh\themes\dsh-theme-sakura-mist"
-git config user.name  "你的名字"
-git config user.email "you@example.com"
-git commit -m "feat: Sakura Mist - pink eye-friendly theme for DeepSeek Harness"
-
-# 在 GitHub 新建空仓库（不要勾选 README/.gitignore/LICENSE），然后：
-git remote add origin git@github.com:<you>/dsh-theme-sakura-mist.git
-git push -u origin main
-```
 
 
