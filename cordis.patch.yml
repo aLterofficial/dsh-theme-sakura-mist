@@ -1,0 +1,11 @@
+# ============================================================================
+# dsh-theme-sakura-mist —— DSH bundle patch
+# ============================================================================
+# 安装到 profile 后，本文件把主题插件插入配置树：
+#   dsh plugin --profile desktop add link:<本目录绝对路径>
+# 或手工在 profile 的 cordis.patch.yml 里追加同样的 insert 行（无需 pnpm）。
+# ============================================================================
+
+- insert:
+    - id: sakura-mist-theme
+      name: dsh-theme-sakura-mist

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN" class="dsh-sakura-mist">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../src/theme.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 24px;
+        font: 15px/1.7 system-ui, sans-serif;
+        background: var(--dsw-alias-bg-base);
+        color: var(--dsw-alias-label-primary);
+      }
+    </style>
+  </head>
+  <body data-ds-dark-theme>
+    <div>正常渲染：设 n &gt; N₀ 时 aₙ ≤ bₙ，取 ε = (a−b)/2。</div>
+    <div>
+      <span class="katex-error" style="color:#cc0000" title="KaTeX parse error">\\exists N_2:\\ n&gt;N_2\\Rightarrow b_n&lt;b+\\varepsilon</span>
+    </div>
+    <pre id="result">RESULT pending</pre>
+    <canvas width="1" height="1" style="display:none"></canvas>
+    <script>
+      window.addEventListener('load', () => {
+        const el = document.querySelector('.katex-error')
+        const probe = (dark) => {
+          document.body.toggleAttribute('data-ds-dark-theme', dark)
+          return getComputedStyle(el).color
+        }
+        const dark = probe(true)
+        const light = probe(false)
+        document.getElementById('result').textContent =
+          'RESULT dark=' + dark.replace(/\s+/g, '') + ' light=' + light.replace(/\s+/g, '')
+      })
+    </script>
+  </body>
+</html>

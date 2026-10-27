@@ -1,0 +1,14 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+*.bak
+
+# dependencies
+node_modules/
+
+# local-only raw screenshots (may contain personal conversation content)
+preview/raw/
+
+# local diagnostics
+applied.json

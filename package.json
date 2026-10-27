@@ -1,0 +1,43 @@
+{
+  "name": "dsh-theme-sakura-mist",
+  "version": "1.0.0",
+  "private": true,
+  "description": "樱雾 · 粉色护眼美化材质 for the DeepSeek Harness Web GUI：暖玫瑰纸色、圆角、纸纹磨砂、低饱和",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "theme",
+    "pink",
+    "eye-comfort"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./theme.css": "./src/theme.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "src/theme.css",
+    "build.mjs",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "immediately": true
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT"
+}
